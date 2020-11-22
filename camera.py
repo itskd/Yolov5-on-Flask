@@ -11,7 +11,7 @@ from utils.utils import *
 
 
 class Camera(BaseCamera):
-    video_source = '4.mp4'
+    video_source = 'rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov'
 
     def __init__(self):
         if os.environ.get('OPENCV_CAMERA_SOURCE'):
@@ -26,7 +26,7 @@ class Camera(BaseCamera):
     def frames():
         out, weights, imgsz = \
         'inference/output', 'weights/yolov5s.pt', 640
-        source = 0
+        source = 'rtsp://wowzaec2demo.streamlock.net/vod/mp4:BigBuckBunny_115k.mov'
         device = torch_utils.select_device()
         if os.path.exists(out):
             shutil.rmtree(out)  # delete output folder
